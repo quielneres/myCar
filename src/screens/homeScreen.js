@@ -3,7 +3,9 @@ import { View, Text, StyleSheet } from "react-native";
 import { ListItem, Input, Button, Overlay } from 'react-native-elements';
 import { database } from '../config/firebase';
 
-// console.log(database.collecation('task'));
+
+
+console.log(database);
 const list = [
     {
         title: 'Appointments',
@@ -16,13 +18,19 @@ const list = [
 ];
 
 const Home = ({ navigation }) => {
+    const [data, setData] = useState([1, 2, 3, 4]);
     const [visible, setVisible] = useState(false);
     const courrent = 'todo';
     const table = 'task';
 
     useEffect(() => {
-        // databases
-        //     .collecation(table)
+
+       
+
+// console.log(database);
+// 
+        // database
+        //     .collection( table)
         //     .where('status', '==', courrent)
         //     .onSnapshot((query) => {
 

@@ -3,6 +3,9 @@ import { View, Text, StyleSheet } from "react-native";
 
 import { ListItem, Input, Button } from 'react-native-elements';
 
+import { setFull } from '../service/service'; 
+
+
 const Fuel = ({ route, navigation }) => {
     const [type, setType] = useState(null);
     const [title, setTitle] = useState('');
@@ -25,8 +28,10 @@ const Fuel = ({ route, navigation }) => {
             'valorAtual': form.valorAtual,
             'valorAbastecido': form.valorAbastecido,
             'km': form.km,
+            'litros': (form.valorAbastecido / form.valorAtual).toFixed(2)
         };
-        console.log(12);
+        
+        setFull(data);
 
     };
 
